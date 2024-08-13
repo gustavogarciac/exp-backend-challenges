@@ -20,6 +20,7 @@ model Book {
   id String @id @default(uuid())
 
   title       String
+  slug        String   @unique
   description String?
   publisher   String
   genre       String

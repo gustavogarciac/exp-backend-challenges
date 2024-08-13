@@ -4,8 +4,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "tsx src/server.ts --watch",
-    "test": "vitest run --dir ./tests",
-    "test:watch": "vitest --dir ./tests",
+    "test": "vitest run --dir src/use-cases/tests",
+    "test:watch": "vitest --dir src/use-cases/tests",
     "sonar": "sonar-scanner"
   },
   "keywords": [],
@@ -13,6 +13,7 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@faker-js/faker": "^8.4.1",
     "@rocketseat/eslint-config": "^2.2.2",
     "@types/node": "^22.2.0",
     "eslint": "8.55.0",
@@ -34,6 +35,7 @@
     "tsup": "^8.2.4",
     "tsx": "^4.17.0",
     "typescript": "^5.5.4",
+    "vite-tsconfig-paths": "^5.0.1",
     "zod": "^3.23.8"
   }
 }
