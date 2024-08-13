@@ -21,8 +21,6 @@ describe('Create Book Use Case', () => {
 
     const { book } = await sut.execute(data)
 
-    console.log(book)
-
     expect(book.id).toEqual(expect.any(String))
   })
 

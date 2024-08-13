@@ -61,4 +61,9 @@ export class InMemoryBooksRepository implements BooksRepository {
     this.books.push(updatedBook)
     return updatedBook
   }
+
+  async delete(id: string) {
+    const books = this.books.filter((book) => book.id !== id)
+    this.books = books
+  }
 }

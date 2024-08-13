@@ -6,4 +6,5 @@ export interface BooksRepository {
   findBySlug(slug: string): Promise<Book | null>
   findAll(): Promise<Book[]>
   put(data: Book, bookId: string): Promise<Book>
+  delete(id: string): Promise<void>
 }
