@@ -48,4 +48,17 @@ export class InMemoryBooksRepository implements BooksRepository {
     this.books.push(book)
     return book
   }
+
+  async put(data: Book, bookId: string) {
+    const bookIndex = this.books.findIndex((book) => book.id === bookId)
+    this.books.slice(bookIndex, 1)
+
+    const updatedBook = {
+      ...data,
+      updatedAt: new Date(),
+    }
+
+    this.books.push(updatedBook)
+    return updatedBook
+  }
 }

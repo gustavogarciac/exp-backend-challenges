@@ -9,7 +9,7 @@ import { GetBooksUseCase } from '../get-books-use-case'
 let booksRepository: BooksRepository
 let sut: GetBooksUseCase
 
-describe('Create Book Use Case', () => {
+describe('Get Books Use Case', () => {
   beforeEach(() => {
     booksRepository = new InMemoryBooksRepository()
     sut = new GetBooksUseCase(booksRepository)
