@@ -22,6 +22,10 @@ export class InMemoryBooksRepository implements BooksRepository {
     return book
   }
 
+  async findAll() {
+    return this.books
+  }
+
   async create(data: Prisma.BookCreateInput) {
     const book = {
       id: data.id ?? randomUUID(),
