@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "tsx src/server.ts --watch"
+    "dev": "tsx src/server.ts --watch",
+    "sonar": "sonar-scanner"
   },
   "keywords": [],
   "author": "",
@@ -15,7 +16,8 @@
     "eslint": "8.55.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-simple-import-sort": "^12.1.1",
-    "prettier": "^3.3.3"
+    "prettier": "^3.3.3",
+    "sonarqube-scanner": "^4.2.0"
   },
   "dependencies": {
     "@fastify/cors": "^9.0.1",
