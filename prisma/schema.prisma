@@ -6,3 +6,34 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+enum Language {
+  EN
+  ES
+  FR
+  DE
+  IT
+  PT
+}
+
+model Book {
+  id String @id @default(uuid())
+
+  title       String
+  description String?
+  publisher   String
+  genre       String
+  pages       Int?
+  language    Language @default(EN)
+  stock       Int
+  rating      Float
+  price       Float
+
+  author        String
+  publishedDate DateTime @map("published_date")
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("books")
+}
