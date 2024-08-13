@@ -1,0 +1,10 @@
+services:
+  db:
+    image: postgres:latest
+    restart: unless-stopped
+    ports:
+      - ${BOOKY_DATABASE_PORT:-5432}:5432
+    environment:
+      POSTGRES_USER: ${BOOKY_DATABASE_USER}
+      POSTGRES_PASSWORD: ${BOOKY_DATABASE_PASSWORD}
+      POSTGRES_DB: ${BOOKY_DATABASE_NAME}
