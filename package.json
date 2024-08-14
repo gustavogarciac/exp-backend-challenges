@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "tsx src/server.ts --watch",
+    "dev": "tsx watch src/server.ts",
     "test": "vitest run --dir src/use-cases/tests",
     "test:watch": "vitest --dir src/use-cases/tests",
     "sonar": "sonar-scanner"

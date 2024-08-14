@@ -22,7 +22,7 @@ export async function createBookRoute(app: FastifyInstance) {
           rating: z.number(),
           price: z.number(),
           author: z.string(),
-          publishedDate: z.string(),
+          publishedDate: z.coerce.date(),
         }),
         response: {
           201: z.object({
