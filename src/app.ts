@@ -8,6 +8,8 @@ import {
   ZodTypeProvider,
 } from 'fastify-type-provider-zod'
 
+import { routes } from './http/routes'
+
 export const app = fastify().withTypeProvider<ZodTypeProvider>()
 
 app.setSerializerCompiler(serializerCompiler)
@@ -28,3 +30,5 @@ app.register(fastifySwagger, {
 app.register(fastifySwaggerUi, {
   routePrefix: '/docs',
 })
+
+app.register(routes)
