@@ -6,13 +6,12 @@ import { makeUpdateBookUseCase } from '@/use-cases/factories/make-update-book-us
 
 export async function updateBookRoute(app: FastifyInstance) {
   app.withTypeProvider<ZodTypeProvider>().put(
-    '/books',
+    '/books/:bookId',
     {
       schema: {
         summary: 'Update a book',
         tags: ['books'],
         body: z.object({
-          bookId: z.string().uuid(),
           title: z.string(),
           description: z.string().nullable(),
           publisher: z.string(),
@@ -25,6 +24,9 @@ export async function updateBookRoute(app: FastifyInstance) {
           author: z.string(),
           publishedDate: z.coerce.date(),
         }),
+        params: z.object({
+          bookId: z.string().uuid(),
+        }),
         response: {
           204: z.null(),
           400: z.object({
@@ -35,9 +37,10 @@ export async function updateBookRoute(app: FastifyInstance) {
     },
     async (req, reply) => {
       const data = req.body
+      const { bookId } = req.params
 
       const updateBookUseCase = makeUpdateBookUseCase()
-      await updateBookUseCase.execute(data, data.bookId)
+      await updateBookUseCase.execute(data, bookId)
 
       return reply.status(204).send()
     },
