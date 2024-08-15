@@ -125,7 +125,3 @@ Start the server
 ## Support
 
 If you find any mistake or bug, please contact me via gustavogarciaci1@gmail.com.
-
-
-
->>>>>>> 4eee187 (chore: updated readme.md)
